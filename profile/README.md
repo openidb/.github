@@ -6,11 +6,11 @@ Open-source infrastructure for Islamic texts — Quran, Hadith, and classical Ar
 
 ### [openidb](https://github.com/openidb/openidb) — Database & API
 
-Hono REST API backed by PostgreSQL, Qdrant, Elasticsearch, and Neo4j. Serves Quran (12 translation languages, 2 tafsirs), Hadith (17 collections), and classical Arabic books extracted from Maktaba Shamela. Neo4j knowledge graphs connect authors, books, categories, and cross-references.
+Hono REST API backed by PostgreSQL, Qdrant, Elasticsearch, and Neo4j. Serves Quran (12 translation languages, 2 tafsirs), Hadith (17 collections), and classical Arabic books extracted from Maktaba Shamela.
 
 ### [sabeel](https://github.com/openidb/sabeel) — Search Frontend
 
-Next.js frontend with hybrid search — combines semantic search (Gemini embeddings via Qdrant) with keyword search (Elasticsearch BM25) using Reciprocal Rank Fusion, plus LLM reranking and query expansion.
+Next.js frontend with hybrid search — combines semantic search (Gemini embeddings via Qdrant) with keyword search (Elasticsearch BM25) using Reciprocal Rank Fusion, Neo4j knowledge graph context, LLM reranking, and query expansion.
 
 ### [scrapers](https://github.com/openidb/scrapers) — Data Acquisition
 
