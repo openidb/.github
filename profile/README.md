@@ -6,7 +6,7 @@ Open-source infrastructure for Islamic texts — Quran, Hadith, and classical Ar
 
 ### [openidb](https://github.com/openidb/openidb) — REST API & Search Engine
 
-Hono REST API backed by PostgreSQL, Qdrant, Elasticsearch, and Neo4j. Serves Quran (6,236 ayahs, 500+ translation editions across 90+ languages, 27 tafsirs in 6 languages), Hadith (17 collections, ~50K hadiths), and classical Arabic books from Maktaba Shamela.
+Hono REST API backed by PostgreSQL, Qdrant, Elasticsearch, and Neo4j. Serves Quran (6,236 ayahs, 500+ translation editions across 90+ languages, 27 tafsirs in 6 languages), Hadith (17 collections, 49,618 hadiths), and classical Arabic books from Maktaba Shamela.
 
 REST endpoints: `/api/search`, `/api/quran`, `/api/hadith`, `/api/books`, `/api/books/authors`, `/api/books/categories`, `/api/transcribe`, `/api/stats`, `/api/health`.
 
