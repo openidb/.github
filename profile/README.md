@@ -1,23 +1,55 @@
-# Open Islamic Database (OpenIDB)
+# OpenIslamicDB
 
-Open-source infrastructure for Islamic texts — Quran, Hadith, classical Arabic books, and Arabic dictionaries. Structured data with REST APIs, hybrid search, and knowledge graphs.
+Open-source database and API for Islamic texts — Quran, Hadith, classical Arabic books, and Arabic dictionaries — with hybrid search combining semantic similarity, keyword matching, knowledge graphs, and LLM reranking.
+
+## Data
+
+| Domain | Volume |
+|--------|--------|
+| **Quran** | 6,236 ayahs, 500+ translations (90+ languages), 27 tafsirs, 100+ audio reciters |
+| **Hadith** | 166,964 hadiths across 24 collections, 67K+ English translations |
+| **Books** | 8,500+ classical Arabic texts with full-text pages, PDFs, metadata |
+| **Dictionary** | 43 dictionaries, 115K entries, 155K+ sub-entries, 457K root mappings |
 
 ## Repositories
 
-### [openidb](https://github.com/openidb/openidb) — REST API & Search Engine
+| Repo | Description | Stack |
+|------|-------------|-------|
+| [**api**](https://github.com/openidb/api) | REST API server | Hono, PostgreSQL, Qdrant, Elasticsearch, Neo4j |
+| [**frontend**](https://github.com/openidb/frontend) | Web frontend | Next.js 16, Tailwind CSS, shadcn/ui |
+| [**scrapers**](https://github.com/openidb/scrapers) | Data acquisition docs | TypeScript pipelines (code lives in api/) |
 
-Hono REST API backed by PostgreSQL, Qdrant, Elasticsearch, and Neo4j. Serves Quran (6,236 ayahs, 500+ translation editions across 90+ languages, 27 tafsirs in 6 languages), Hadith (17 collections, 49,618 hadiths), classical Arabic books from [Turath.io](https://turath.io/), and Arabic dictionaries (43 sources, ~115K entries, 155K+ sub-entries with root derivation).
+## Data Sources
 
-REST endpoints: `/api/search`, `/api/quran`, `/api/hadith`, `/api/books`, `/api/books/authors`, `/api/books/categories`, `/api/dictionary`, `/api/transcribe`, `/api/stats`, `/api/health`.
+### Quran
 
-Search combines semantic similarity (Gemini embeddings via Qdrant) with keyword matching (Elasticsearch BM25) using Reciprocal Rank Fusion, Neo4j knowledge graph context, LLM reranking, and query expansion.
+| What | Source |
+|------|--------|
+| **Text** | [Al Quran Cloud API](https://alquran.cloud/) — Uthmani script (Hafs an Asim) |
+| **Translations** | [fawazahmed0/quran-api](https://github.com/fawazahmed0/quran-api) — 500+ editions, 90+ languages |
+| **Tafsirs** | [spa5k/tafsir_api](https://github.com/spa5k/tafsir_api) — 27 editions, 6 languages |
+| **Audio** | [EveryAyah.com](https://everyayah.com/), [Al Quran Cloud CDN](https://cdn.islamic.network/), [Quran Foundation](https://quran.com/), [QUL / Tarteel AI](https://qul.tarteel.ai/) |
 
-### [sabeel](https://github.com/openidb/sabeel) — Frontend
+### Hadith
 
-Next.js app with hybrid search UI, HTML book reader with inline word definitions, voice input, knowledge graph panel, and dark mode. Supports 13 interface languages with full RTL support. Consumes the openidb API.
+- **[sunnah.com](https://sunnah.com/)** — 17 collections (49,618 hadiths) with Arabic text and English translations
+- **[hadithunlocked.com](https://hadithunlocked.com/)** — 7 collections (117,346 hadiths) with full tashkeel, isnad/matn separation, scholarly grading, and human-only English translations
 
-**Live:** [sabeel.dev](https://sabeel.dev)
+### Books & Dictionaries
 
-### [scrapers](https://github.com/openidb/scrapers) — Data Acquisition
+- **[Turath.io](https://turath.io/)** — 8,500+ classical Arabic texts and 43 Arabic dictionaries (same corpus as [Shamela.ws](https://shamela.ws/))
+- **[Arramooz](https://github.com/linuxscout/arramooz)** — Arabic morphological database for root derivation
+- **KhorsiCorpus** — Taj al-Arus word-root derivatives for morphological pattern generation
 
-TypeScript import pipelines for sourcing data from [Turath.io](https://turath.io/), sunnah.com, and multiple Quran APIs. Includes dictionary extraction (regex-based and LLM-based), root derivation from Arramooz and Taj al-Arus, and structured database imports.
+## Quick Start
+
+```bash
+# 1. Start infrastructure
+cd api && docker compose up -d
+
+# 2. Start API server
+bun install && bun run dev          # http://localhost:4000
+
+# 3. Start frontend (in another terminal)
+cd ../frontend/web && bun install && bun run dev   # http://localhost:3000
+```
