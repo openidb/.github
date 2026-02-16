@@ -26,14 +26,16 @@
 
 Open-source database and API for Islamic texts — Quran, Hadith, classical Arabic books, and Arabic dictionaries — with hybrid search combining semantic similarity, keyword matching, knowledge graphs, and LLM reranking.
 
+**Live:** [openidb.org](https://openidb.org) — **28 languages**, full RTL support
+
 ## Data
 
 | Domain | Volume |
 |--------|--------|
-| **Quran** | 6,236 ayahs, 500+ translations (90+ languages), 27 tafsirs, 100+ audio reciters |
+| **Quran** | 6,236 ayahs, ~700 translations (90+ languages), 136 tafsirs, word-by-word translations (12 languages), 100+ audio reciters |
 | **Hadith** | 166,964 hadiths across 24 collections, 67K+ English translations |
 | **Books** | 8,500+ classical Arabic texts with full-text pages, PDFs, metadata |
-| **Dictionary** | 43 dictionaries, 115K entries, 155K+ sub-entries, 457K root mappings |
+| **Dictionary** | 43 dictionaries, ~187K entries, ~347K sub-entries, 457K root mappings |
 
 ## Repositories
 
@@ -51,7 +53,10 @@ Open-source database and API for Islamic texts — Quran, Hadith, classical Arab
 |------|--------|
 | **Text** | [Al Quran Cloud API](https://alquran.cloud/) — Uthmani script (Hafs an Asim) |
 | **Translations** | [fawazahmed0/quran-api](https://github.com/fawazahmed0/quran-api) — 500+ editions, 90+ languages |
+| | [QUL / Tarteel AI](https://qul.tarteel.ai/) — 192 editions, 75+ languages |
 | **Tafsirs** | [spa5k/tafsir_api](https://github.com/spa5k/tafsir_api) — 27 editions, 6 languages |
+| | [QUL / Tarteel AI](https://qul.tarteel.ai/) — 109 editions, classical Arabic tafsirs |
+| **Word-by-Word** | [Quran.com](https://quran.com/) — per-word translations in 12 languages (929K+ words) |
 | **Audio** | [EveryAyah.com](https://everyayah.com/), [Al Quran Cloud CDN](https://cdn.islamic.network/), [Quran Foundation](https://quran.com/), [QUL / Tarteel AI](https://qul.tarteel.ai/) |
 
 ### Hadith
@@ -61,7 +66,7 @@ Open-source database and API for Islamic texts — Quran, Hadith, classical Arab
 
 ### Books & Dictionaries
 
-- **[Turath.io](https://turath.io/)** — 8,500+ classical Arabic texts and 43 Arabic dictionaries (same corpus as [Shamela.ws](https://shamela.ws/))
+- **[Turath.io](https://turath.io/)** — 8,500+ classical Arabic texts and 43 Arabic dictionaries (~187K entries, ~347K sub-entries) (same corpus as [Shamela.ws](https://shamela.ws/))
 - **[Arramooz](https://github.com/linuxscout/arramooz)** — Arabic morphological database for root derivation
 - **KhorsiCorpus** — Taj al-Arus word-root derivatives for morphological pattern generation
 
